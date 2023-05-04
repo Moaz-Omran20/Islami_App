@@ -164,10 +164,7 @@ class Quran extends StatelessWidget {
                       child: Center(
                         child: Text(
                           suraNames[index],
-                          style:  GoogleFonts.amiri(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                     ),

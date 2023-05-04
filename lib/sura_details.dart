@@ -57,10 +57,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                               // ),
                               TextSpan(
                                 text: "${verses[index]}",
-                                style: GoogleFonts.amiri(
-                                    fontSize: 25,
-                                    color: Theme.of(context).primaryColor,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.displayLarge,
                               ),
                             ],
                           ),

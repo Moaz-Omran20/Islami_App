@@ -19,7 +19,7 @@ class RadioBar extends StatelessWidget {
           ),
           Text(
             "اذاعه القرآن الكريم",
-            style: GoogleFonts.amiri(fontSize: 22, fontWeight: FontWeight.bold),
+            style: Theme.of(context).textTheme.bodySmall,
           ),
           SizedBox(
             height: 60,

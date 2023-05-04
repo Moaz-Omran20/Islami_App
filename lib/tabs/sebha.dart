@@ -23,7 +23,7 @@ class _SebhaState extends State<Sebha> {
             ),
             Text(
               "عدد التسبيحات",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.black),
             ),
             Container(
               width: 65,
@@ -35,7 +35,7 @@ class _SebhaState extends State<Sebha> {
               child: Center(
                 child: Text(
                   "$counter",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25,color: Colors.black),
                 ),
               ),
             ),

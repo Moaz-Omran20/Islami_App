@@ -3,6 +3,7 @@ import 'package:islami_app/tabs/ahadeth.dart';
 import 'package:islami_app/tabs/quran.dart';
 import 'package:islami_app/tabs/radio.dart';
 import 'package:islami_app/tabs/sebha.dart';
+import 'package:islami_app/tabs/settings.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "HomeScreen";
@@ -13,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 3;
-  List<Widget> tabs = [RadioBar(), Sebha(), Ahadeth(), Quran()];
+  List<Widget> tabs = [SettingsTab(),RadioBar(), Sebha(), Ahadeth(), Quran()];
 
 
   @override
@@ -41,6 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {});
             },
             items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+              label: "الاعدادات",),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage("assets/images/radio_blue.png"),size: 30),
                   label: "الراديو",),

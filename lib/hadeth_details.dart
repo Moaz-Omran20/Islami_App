@@ -27,20 +27,14 @@ class HadethDetails extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.all(18.0),
             child: Container(
+              height: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Text(
-                    "${args.content}",
-                    style: GoogleFonts.amiri(
-                      color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,fontSize: 22),
-                  );
-                },
-                itemCount: args.content.length,
+              child: Text(
+                "${args.content}",
+                style: Theme.of(context).textTheme.displayLarge,
               ),
             ),
           ),

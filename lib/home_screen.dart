@@ -13,9 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int index = 3;
-  List<Widget> tabs = [SettingsTab(),RadioBar(), Sebha(), Ahadeth(), Quran()];
-
+  int index = 4;
+  List<Widget> tabs = [SettingsTab(), RadioBar(), Sebha(), Ahadeth(), Quran()];
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +22,18 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         SizedBox(
           width: double.infinity,
-          child: Image.asset("assets/images/home_bg.png", fit: BoxFit.fill),
+          child: Image.asset(
+              Theme.of(context).colorScheme.brightness == Brightness.light
+                  ? "assets/images/home_bg.png"
+                  : "assets/images/dark_bg.png",
+              fit: BoxFit.fill),
         ),
         Scaffold(
           appBar: AppBar(
-            title: const Text(
+            title: Text(
               "اسلامى",
               style: TextStyle(
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.onPrimary,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
@@ -43,19 +46,25 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: const [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-              label: "الاعدادات",),
+                icon: Icon(Icons.settings),
+                label: "الاعدادات",
+              ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/radio_blue.png"),size: 30),
-                  label: "الراديو",),
+                icon: ImageIcon(AssetImage("assets/images/radio_blue.png"),
+                    size: 30),
+                label: "الراديو",
+              ),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/sebha_blue.png"),size: 30),
+                  icon: ImageIcon(AssetImage("assets/images/sebha_blue.png"),
+                      size: 30),
                   label: "السبحه"),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/ahadeth.png"),size: 30),
+                  icon: ImageIcon(AssetImage("assets/images/ahadeth.png"),
+                      size: 30),
                   label: "الاحاديث"),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/moshaf_blue.png"),size: 30),
+                  icon: ImageIcon(AssetImage("assets/images/moshaf_blue.png"),
+                      size: 30),
                   label: "القران"),
             ],
           ),

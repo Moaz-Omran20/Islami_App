@@ -131,35 +131,30 @@ class Quran extends StatelessWidget {
             child: Container(
                 height: 220,
                 child: Image.asset(
-                  "assets/images/quran_bg.png", fit: BoxFit.fill,)),
+                  "assets/images/quran_bg.png",
+                  fit: BoxFit.fill,
+                )),
           ),
           Divider(
             thickness: 3,
-            color: Theme
-                .of(context)
-                .primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
-          Text(
-            "اسم السورة",
-            style:  GoogleFonts.amiri(
-                color: Theme.of(context).primaryColor,
-                fontSize: 30,
-                fontWeight: FontWeight.bold)
-          ),
+          Text("اسم السورة",
+              style: GoogleFonts.amiri(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold)),
           Divider(
             thickness: 3,
-            color: Theme
-                .of(context)
-                .primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
           Expanded(
             child: ListView.separated(
-                itemBuilder: (context, index) =>
-                    InkWell(
+                itemBuilder: (context, index) => InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, SuraDetails.routeName,
                             arguments:
-                            SuraDetailsArgs(suraNames[index], index));
+                                SuraDetailsArgs(suraNames[index], index));
                       },
                       child: Center(
                         child: Text(
@@ -168,14 +163,11 @@ class Quran extends StatelessWidget {
                         ),
                       ),
                     ),
-                separatorBuilder: (context, index) =>
-                    Divider(
-                        thickness: 2,
-                        color: Theme
-                            .of(context)
-                            .primaryColor,
-                        indent: 30,
-                        endIndent: 30),
+                separatorBuilder: (context, index) => Divider(
+                    thickness: 2,
+                    color: Theme.of(context).colorScheme.primary,
+                    indent: 30,
+                    endIndent: 30),
                 itemCount: suraNames.length),
           ),
         ],

@@ -13,13 +13,17 @@ class HadethDetails extends StatelessWidget {
         SizedBox(
             width: double.infinity,
             height: double.infinity,
-            child: Image.asset("assets/images/home_bg.png", fit: BoxFit.fill)),
+            child: Image.asset(
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? "assets/images/home_bg.png"
+                    : "assets/images/dark_bg.png",
+                fit: BoxFit.fill)),
         Scaffold(
           appBar: AppBar(
             title: Text(
               args.title,
               style: GoogleFonts.amiri(
-                  color: Colors.black,
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
@@ -27,9 +31,10 @@ class HadethDetails extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.all(18.0),
             child: Container(
-              height: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? Colors.white
+                    : Color(0xFF141A2E),
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Text(

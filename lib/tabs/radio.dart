@@ -33,7 +33,7 @@ class RadioBar extends StatelessWidget {
                   AssetImage(
                     "assets/images/Icon metro-next.png",
                   ),
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
 
               ),
@@ -44,7 +44,7 @@ class RadioBar extends StatelessWidget {
                   AssetImage(
                     "assets/images/Icon awesome-play.png",
                   ),
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
               SizedBox(width: 20,),
@@ -54,7 +54,7 @@ class RadioBar extends StatelessWidget {
                   AssetImage(
                     "assets/images/icon_next.png",
                   ),
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ],

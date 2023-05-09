@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
      body: Container(
        height: double.infinity,
         width: double.infinity,
-        child: Image.asset("assets/images/splash_screen.png",fit: BoxFit.fill,),
+        child: Image.asset(Theme.of(context).colorScheme.brightness==Brightness.dark?"assets/images/dark_splash.png" :"assets/images/splash_screen.png",fit: BoxFit.fill,),
       )
     ) ;
   }

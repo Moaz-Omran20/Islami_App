@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/hadeth_details.dart';
 import 'package:islami_app/hadeth_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Ahadeth extends StatefulWidget {
   @override
@@ -27,21 +28,20 @@ class _AhadethState extends State<Ahadeth> {
             ),
             Divider(
               thickness: 3,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             Text(
-              "الاحاديث",
+              AppLocalizations.of(context)!.ahadeth,
               style: GoogleFonts.amiri(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
-
               ),
               textAlign: TextAlign.center,
             ),
             Divider(
               thickness: 3,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
             Expanded(
                 child: ListView.separated(
@@ -53,8 +53,7 @@ class _AhadethState extends State<Ahadeth> {
                         child: Center(
                           child: Text(
                             allAhadeth[index].title,
-                            style: GoogleFonts.amiri(
-                                color: Colors.black,fontSize: 23,fontWeight: FontWeight.bold),
+                            style: Theme.of(context).textTheme.bodySmall,
                           ),
                         ),
                       );
@@ -64,7 +63,7 @@ class _AhadethState extends State<Ahadeth> {
                         thickness: 2,
                         endIndent: 30,
                         indent: 30,
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.primary,
                       );
                     },
                     itemCount: allAhadeth.length)),

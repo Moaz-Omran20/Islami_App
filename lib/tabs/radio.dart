@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioBar extends StatelessWidget {
   @override
@@ -18,7 +18,7 @@ class RadioBar extends StatelessWidget {
                 )),
           ),
           Text(
-            "اذاعه القرآن الكريم",
+            AppLocalizations.of(context)!.quraanRadio,
             style: Theme.of(context).textTheme.bodySmall,
           ),
           SizedBox(

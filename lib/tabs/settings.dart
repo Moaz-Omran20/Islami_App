@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/bottom_sheet.dart';
 import 'package:islami_app/language_bottom_sheet.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/my_provider.dart';
 
 class SettingsTab extends StatefulWidget {
   @override
@@ -10,6 +13,7 @@ class SettingsTab extends StatefulWidget {
 class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<MyProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Column(
@@ -53,7 +57,7 @@ class _SettingsTabState extends State<SettingsTab> {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text("Arabic"),
+                child: Text(provider.language == "ar"? "Arabic" : "English"),
               ),
             ),
           ),

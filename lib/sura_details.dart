@@ -25,14 +25,17 @@ class _SuraDetailsState extends State<SuraDetails> {
         SizedBox(
             width: double.infinity,
             height: double.infinity,
-            child: Image.asset("assets/images/home_bg.png",
+            child: Image.asset(
+                Theme.of(context).colorScheme.brightness == Brightness.light
+                    ? "assets/images/home_bg.png"
+                    : "assets/images/dark_bg.png",
                 fit: BoxFit.fill)),
         Scaffold(
           appBar: AppBar(
             title: Text(
               " سورة ${args.suraName} ",
-              style:  GoogleFonts.amiri(
-                  color: Colors.black,
+              style: GoogleFonts.amiri(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
@@ -41,7 +44,10 @@ class _SuraDetailsState extends State<SuraDetails> {
             padding: const EdgeInsets.all(15),
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(50)),
+                  color: Theme.of(context).colorScheme.brightness == Brightness.light
+                      ? Colors.white
+                      : Color(0xFF141A2E),
+                  borderRadius: BorderRadius.circular(50)),
               child: Padding(
                 padding: const EdgeInsets.all(15),
                 child: ListView.separated(
@@ -57,10 +63,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                               // ),
                               TextSpan(
                                 text: "${verses[index]}",
-                                style: GoogleFonts.amiri(
-                                    fontSize: 25,
-                                    color: Theme.of(context).primaryColor,
-                                    fontWeight: FontWeight.bold),
+                                style: Theme.of(context).textTheme.displayLarge,
                               ),
                             ],
                           ),
@@ -68,7 +71,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                         ),
                     separatorBuilder: (context, index) => Divider(
                           thickness: 1,
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                     itemCount: verses.length),
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/sura_details.dart';
 import 'package:islami_app/sura_details_args.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Quran extends StatelessWidget {
   List<String> suraNames = [
@@ -131,54 +132,43 @@ class Quran extends StatelessWidget {
             child: Container(
                 height: 220,
                 child: Image.asset(
-                  "assets/images/quran_bg.png", fit: BoxFit.fill,)),
+                  "assets/images/quran_bg.png",
+                  fit: BoxFit.fill,
+                )),
           ),
           Divider(
             thickness: 3,
-            color: Theme
-                .of(context)
-                .primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
-          Text(
-            "اسم السورة",
-            style:  GoogleFonts.amiri(
-                color: Theme.of(context).primaryColor,
-                fontSize: 30,
-                fontWeight: FontWeight.bold)
-          ),
+          Text(AppLocalizations.of(context)!.suraName,
+              style: GoogleFonts.amiri(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold)),
           Divider(
             thickness: 3,
-            color: Theme
-                .of(context)
-                .primaryColor,
+            color: Theme.of(context).colorScheme.primary,
           ),
           Expanded(
             child: ListView.separated(
-                itemBuilder: (context, index) =>
-                    InkWell(
+                itemBuilder: (context, index) => InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, SuraDetails.routeName,
                             arguments:
-                            SuraDetailsArgs(suraNames[index], index));
+                                SuraDetailsArgs(suraNames[index], index));
                       },
                       child: Center(
                         child: Text(
                           suraNames[index],
-                          style:  GoogleFonts.amiri(
-                              color: Colors.black,
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                     ),
-                separatorBuilder: (context, index) =>
-                    Divider(
-                        thickness: 2,
-                        color: Theme
-                            .of(context)
-                            .primaryColor,
-                        indent: 30,
-                        endIndent: 30),
+                separatorBuilder: (context, index) => Divider(
+                    thickness: 2,
+                    color: Theme.of(context).colorScheme.primary,
+                    indent: 30,
+                    endIndent: 30),
                 itemCount: suraNames.length),
           ),
         ],

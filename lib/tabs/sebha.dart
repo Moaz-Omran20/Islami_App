@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Sebha extends StatefulWidget {
   @override
@@ -16,26 +17,29 @@ class _SebhaState extends State<Sebha> {
           children: [
             Container(
               width: 180,
-              child: Image.asset("assets/images/Group 8.png"),
+              child: Image.asset(
+                  Theme.of(context).colorScheme.brightness == Brightness.light
+                      ? "assets/images/Group 8.png"
+                      : "assets/images/sebha_dark.png"),
             ),
             SizedBox(
               height: 20,
             ),
             Text(
-              "عدد التسبيحات",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              AppLocalizations.of(context)!.numOfTasbeh,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
             Container(
               width: 65,
               height: 65,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFB7935F),
+                color: Theme.of(context).primaryColor,
               ),
               child: Center(
                 child: Text(
                   "$counter",
-                  style: TextStyle(fontSize: 25),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
             ),
@@ -47,15 +51,18 @@ class _SebhaState extends State<Sebha> {
                 counter++;
                 setState(() {});
               },
-              child: Text(
-                "سبحان الله",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).colorScheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
+              ),
+              child: Text(
+                "سبحان الله",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.brightness==Brightness.dark? Theme.of(context).primaryColor :Colors.white),
               ),
             ),
           ],

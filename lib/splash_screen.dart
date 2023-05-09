@@ -10,7 +10,7 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(Duration(seconds: 2),() => Navigator.pushReplacementNamed(
         context, HomeScreen.routeName),);
     return Scaffold(
-     body: Container(
+     body: SizedBox(
        height: double.infinity,
         width: double.infinity,
         child: Image.asset(Theme.of(context).colorScheme.brightness==Brightness.dark?"assets/images/dark_splash.png" :"assets/images/splash_screen.png",fit: BoxFit.fill,),

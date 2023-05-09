@@ -19,8 +19,8 @@ class _SettingsTabState extends State<SettingsTab> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Theming"),
-          SizedBox(
+          const Text("Theming"),
+          const SizedBox(
             height: 3,
           ),
           InkWell(
@@ -37,14 +37,14 @@ class _SettingsTabState extends State<SettingsTab> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Text(
             "Language",
             style: Theme.of(context).textTheme.bodyMedium,
           ),
-          SizedBox(
+          const SizedBox(
             height: 3,
           ),
           InkWell(
@@ -68,7 +68,7 @@ class _SettingsTabState extends State<SettingsTab> {
 
   void showModelSheet() {
     showModalBottomSheet(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), topLeft: Radius.circular(20))),
       context: context,
@@ -78,7 +78,7 @@ class _SettingsTabState extends State<SettingsTab> {
     );
   }void showLanguageSheet() {
     showModalBottomSheet(
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(20), topLeft: Radius.circular(20))),
       context: context,

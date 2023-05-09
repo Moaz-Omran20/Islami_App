@@ -47,24 +47,24 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             items: [
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/moshaf_blue.png"),
+                  icon: const ImageIcon(AssetImage("assets/images/moshaf_blue.png"),
                       size: 30),
                   label: AppLocalizations.of(context)!.quran),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/ahadeth.png"),
+                  icon: const ImageIcon(AssetImage("assets/images/ahadeth.png"),
                       size: 30),
                   label: AppLocalizations.of(context)!.ahadeth),
               BottomNavigationBarItem(
-                  icon: ImageIcon(AssetImage("assets/images/sebha_blue.png"),
+                  icon: const ImageIcon(AssetImage("assets/images/sebha_blue.png"),
                       size: 30),
                   label: AppLocalizations.of(context)!.sebha),
               BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage("assets/images/radio_blue.png"),
+                icon: const ImageIcon(AssetImage("assets/images/radio_blue.png"),
                     size: 30),
                 label: AppLocalizations.of(context)!.radio,
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+                icon: const Icon(Icons.settings),
                 label: AppLocalizations.of(context)!.settings,
               ),
             ],
